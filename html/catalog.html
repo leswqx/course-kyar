@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>Каталог недвижимости</title>
+</head>
+<body>
+    <header class="header"> 
+        <div class="header__inner container">
+            <a href="/html/main.html" class="header__logo logo">
+                <img src="/img/logo-green.svg" alt="EcoHaven Realty" width="200px" height="30px" loading="lazy">
+            </a>
+            
+            <nav class="header__menu hidden__mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item"><a class="header__menu-link-color" href="/html/main.html">Home</a></li>
+                    <li class="header__menu-item"><a class="header__menu-link-color" href="/html/catalog.html">Catalog</a></li>
+                    <li class="header__menu-item"><a class="header__menu-link-color" href="/html/aboutUs.html">About us</a></li>
+                    <li class="header__menu-item"><a class="header__menu-link-color" href="/html/contact.html">Contact</a></li>
+                </ul>            
+            </nav>
+
+            <button class="button__burder-menu burger-button-color visible-mobile" type="button" onclick="mobileOverlay.showModal()">
+                <span class="visually-hiden"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section container"> 
+            <div class="section__body"> 
+                <h2 class="section__title">Найдите дома и квартиры в вашем любимом месте</h2>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section__body">
+                <div class="catalog">
+                    <div class="menu">
+                        <div class="menu__group">
+                            <div class="menu__item">
+                                <h4 class="menu__title">Сортировка</h4>
+                                <div class="menu__select-wrapper">
+                                    <select class="menu__select" id="sortSelect">
+                                        <option value="">Выберите сортировку</option>
+                                        <option value="price-asc">По возрастанию цены</option>
+                                        <option value="price-desc">По убыванию цены</option>
+                                    </select>
+                                    <span class="menu__select-arrow"></span>
+                                </div>
+                            </div>
+
+                            <div class="menu__item">
+                                <h4 class="menu__title">Город</h4>
+                                <div class="menu__select-wrapper">
+                                    <select class="menu__select" id="citySelect">
+                                        <option value="">Выберите город</option>
+                                        <!-- Города будут добавлены через JavaScript -->
+                                    </select>
+                                    <span class="menu__select-arrow"></span>
+                                </div>
+                            </div>
+
+                            <div class="menu__item">
+                                <h4 class="menu__title">Тип недвижимости</h4>
+                                <div class="menu__select-wrapper">
+                                    <select class="menu__select" id="propertySelect">
+                                        <option value="">Выберите тип</option>
+                                        <option value="дом">Дом</option>
+                                        <option value="квартира">Квартира</option>
+                                        <option value="вилла">Вилла</option>
+                                    </select>
+                                    <span class="menu__select-arrow"></span>
+                                </div>
+                            </div>
+
+                            <div class="menu__item">
+                                <h4 class="menu__title">Тип сделки</h4>
+                                <div class="menu__select-wrapper">
+                                    <select class="menu__select" id="dealSelect">
+                                        <option value="">Выберите тип сделки</option>
+                                        <!-- Типы сделок будут добавлены через JavaScript -->
+                                    </select>
+                                    <span class="menu__select-arrow"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="purchase">
+                        <div class="purchase__list">
+                            <!-- Карточки недвижимости будут добавлены через JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__body container">
+            <div class="footer__contacts">
+                <img src="/img/logo.svg" alt="EcoHaven Realty" width="200" height="30">
+                <div class="footer__contacts-list">
+                    <a href="https://www.facebook.com/" class="footer__contacts-icon">
+                        <img src="/img/facebook.svg" alt="facebook">
+                    </a>
+                    <a href="https://www.linkedin.com/" class="footer__contacts-icon">
+                        <img src="/img/linkedIn.svg" alt="linkedIn">
+                    </a>
+                    <a href="https://twitter.com/" class="footer__contacts-icon">
+                        <img src="/img/twitter.svg" alt="twitter">
+                    </a>
+                    <a href="https://www.instagram.com/" class="footer__contacts-icon">
+                        <img src="/img/instagram.svg" alt="instagram">
+                    </a>
+                </div>
+                <a href="#" class="footer__contacts-button button-light">Связаться с нами</a>
+            </div>
+
+            <nav class="footer__menu">
+                <ul class="footer__menu-list">
+                    <li class="footer__menu-item"><a class="footer__menu-link" href="/html/main.html">Home</a></li>
+                    <li class="footer__menu-item"><a class="footer__menu-link" href="/html/catalog.html">Catalog</a></li>
+                    <li class="footer__menu-item"><a class="footer__menu-link" href="/html/aboutUs.html">About us</a></li>
+                    <li class="footer__menu-item"><a class="footer__menu-link" href="/html/contact.html">Contact</a></li>
+                </ul>            
+            </nav>
+        </div>
+    </footer>
+
+    <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog">
+            <button class="mobile-overlay__close-button cross-button" type="submit">
+                <span class="visually-hiden"></span>
+            </button>
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item"><a href="/html/main.html" class="mobile-overlay__link">Home</a></li>
+                <li class="mobile-overlay__item"><a href="/html/catalog.html" class="mobile-overlay__link">Catalog</a></li>
+                <li class="mobile-overlay__item"><a href="/html/aboutUs.html" class="mobile-overlay__link">About us</a></li>
+                <li class="mobile-overlay__item"><a href="/html/contact.html" class="mobile-overlay__link">Contact</a></li>
+            </ul>
+        </div>
+    </dialog>
+
+    <script src="/js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+.color-light {
+    background-color: var(--color-light);
+}
+
+.case {
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+
+        @include tablet {
+            gap: 24px;
+        }
+
+        @include mobile {
+            gap: 16px;
+        }
+    }
+    
+    &__hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        border-radius: 16px;
+        padding: 32px;
+        background-color: var(--color-gray-alt);
+
+        @include desktop {
+            padding: 28px;
+        }
+        @include tablet {
+            padding: 24px;
+            font-size: 14px;
+
+        }
+
+        @include mobile {
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            text-align: center;
+
+            @include mobile {
+                gap: 10px;
+            }
+        }
+
+        &-image {
+            @include mobile {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}

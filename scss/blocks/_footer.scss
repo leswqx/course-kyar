@@ -1,0 +1,44 @@
+.footer {
+    width: 100%;
+    background-color: var(--color-accent);
+    padding: var(--section-padding-y) 0;
+    
+    
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &-link {
+            @include fluid-text(20, 16);
+
+            color: var(--color-gray-alt);
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 30px;
+
+        &-list {
+            display: flex;
+            gap: 12px;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.cta {
+    
+    background-image: url(../img/bacground2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  
+
+    @include mobile {
+        border-radius: 0;
+    }
+    
+    &__body {
+        
+
+        @include flex-center;
+        height: 474px;
+        
+        &-bg {
+            max-width: 675px;
+            background-color: var(--color-light);
+            margin: 106px 311px;
+            border-radius: 20px;
+
+            @include desktop {
+                margin: 106px 200px;
+            }
+
+            @include tablet {
+                margin: 106px 100px;
+            }
+
+            @include mobile {
+                margin: 106px 16px;
+            }
+            
+        }
+
+        &-content {
+
+            padding: 38px 48px;
+            text-align: center;
+
+            &-title {
+                font-weight: 700;
+            }
+
+            &-link {
+                color: transparent;
+            }
+    
+            &-description {
+                margin:20px 0 24px 0;
+                font-weight: 500;
+
+                @include fluid-text(16, 14);    
+            }
+
+            @include tablet {
+                padding: 32px 40px;
+
+            }
+
+            @include mobile {
+                padding: 38px 16px ;
+            }
+        }
+
+    }
+
+    @include mobile {
+        
+        &-mobile {
+            padding: 0;
+        }
+    }
+}

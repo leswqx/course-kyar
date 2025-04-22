@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <property>
+        <id>1</id>
+        <title>Вилла у моря</title>
+        <price>8995000</price>
+        <address>ул. Приморская 25, Сочи</address>
+        <city>Сочи</city>
+        <type>дом</type>
+        <deal_type>продажа</deal_type>
+        <beds>5</beds>
+        <baths>3</baths>
+        <square_footage>250</square_footage>
+        <image>/img/card.png</image>
+    </property>
+    <property>
+        <id>2</id>
+        <title>Апартаменты в центре</title>
+        <price>150000</price>
+        <address>ул. Ленина 15, Москва</address>
+        <city>Москва</city>
+        <type>квартира</type>
+        <deal_type>аренда</deal_type>
+        <beds>3</beds>
+        <baths>2</baths>
+        <square_footage>120</square_footage>
+        <image>/img/card.png</image>
+    </property>
+    <property>
+        <id>3</id>
+        <title>Апартаменты в центре</title>
+        <price>150000</price>
+        <address>ул. Ленина 15, Москва</address>
+        <city>Москва</city>
+        <type>квартира</type>
+        <deal_type>аренда</deal_type>
+        <beds>3</beds>
+        <baths>2</baths>
+        <square_footage>120</square_footage>
+        <image>/img/card.png</image>
+    </property>
+
+    <property>
+        <id>4</id>
+        <title>Апартаменты в центре</title>
+        <price>150000</price>
+        <address>ул. Ленина 15, Москва</address>
+        <city>Москва</city>
+        <type>квартира</type>
+        <deal_type>аренда</deal_type>
+        <beds>3</beds>
+        <baths>2</baths>
+        <square_footage>120</square_footage>
+        <image>/img/card.png</image>
+    </property>
+</properties>

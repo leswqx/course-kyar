@@ -1,0 +1,55 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+
+
+
+    @include mobile {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__body {
+        max-width: 604px;
+    }
+
+    &__title-min {
+        @include fluid-text(16, 12);
+        margin-bottom: 15px;
+        color: var(--color-accent);
+
+        @include tablet {
+            font-size: 12px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__description {
+        @include fluid-text(20, 14);
+
+        margin-bottom: 18px;
+        text-align: justify;
+
+    }
+
+    &__image {
+        @include desktop {
+            max-width: 50%;
+        }
+        @include tablet {
+            max-width: 50%;
+            height: auto;
+        }
+        @include mobile {
+            max-width: 100%;     
+            width: 100%;    
+            order: 1; 
+        }
+
+    }
+}

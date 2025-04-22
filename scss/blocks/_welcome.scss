@@ -1,0 +1,25 @@
+.welcome {
+    width: 100%;
+    background-image: url(/img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 240px 0;
+    margin-top: -88px;
+    
+    &__body {
+        flex-direction: column;
+        @include flex-center;
+        text-align: center;
+    }
+
+    &__title {
+        color: var(--color-light);
+
+    }
+
+    &__description {
+        color: var(--color-gray);
+
+    }
+}

@@ -1,0 +1,37 @@
+.burger-button {
+    @include reset-button;
+    @include square(48px);
+
+    position: relative;
+
+    &::after {
+        @include abs-center;
+
+        content: '';
+        width: 50%;
+        height: 2px;
+
+        background-color: var(--color-light);
+        border-radius: var(--border-radius);
+        box-shadow: 0 -8px var(--color-light), 0 8px var(--color-light);
+    }
+}
+
+.burger-button-color {
+    @include reset-button;
+    @include square(48px);
+
+    position: relative;
+
+    &::after {
+        @include abs-center;
+
+        content: '';
+        width: 50%;
+        height: 2px;
+
+        background-color: var(--color-accent);
+        border-radius: var(--border-radius);
+        box-shadow: 0 -8px var(--color-accent), 0 8px var(--color-accent);
+    }
+}

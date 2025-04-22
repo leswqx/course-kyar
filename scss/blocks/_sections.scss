@@ -1,0 +1,12 @@
+.section {
+    padding-block: var(--section-padding-y);
+
+    &--hiden-x {
+        overflow-x: hidden;
+    }
+
+    &__title {
+        @include flex-center;
+        margin-bottom: 50px;
+    }
+}

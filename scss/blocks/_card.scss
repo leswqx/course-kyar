@@ -1,0 +1,88 @@
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    max-width: 368px;
+    width: 100%;
+    background-color: white;
+
+    @media (max-width: 1280px) {
+        width: 340px;
+    }
+
+    &__info {
+        padding: 16px;
+
+        &-main {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 12px;
+
+            &-location {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                &-title {
+                    font-size: 24px;
+                }
+
+                &-price {
+                    font-size: 20px;
+                    color: $color-primary;
+                }
+            }
+
+            &-address {
+                display: flex;
+                align-items: center;
+
+                &-name {
+                    margin: 0 0 0 16px;
+                    opacity: 0.6;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        &-footer {
+            border-top: 2px solid rgb(235, 235, 235);
+
+            &-details {
+                margin-top: 12px;
+                display: flex;
+                gap: 14px;
+
+                &-item {
+                    display: flex;
+                    align-items: center;
+
+                    &-name {
+                        margin-left: 5px;
+                        font-size: 12px;
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+
+    &__label {
+        background-color: $color-primary;
+        color: white;
+        font-size: 14px;
+        border-radius: 16px;
+        position: absolute;
+        padding: 8px 16px;
+        left: 10px;
+        top: 10px;
+        z-index: 1;
+    }
+
+    &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+} 

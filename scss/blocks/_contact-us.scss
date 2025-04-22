@@ -1,0 +1,136 @@
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  
+  
+  @include tablet-above {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__form {
+    width: 100%;
+    max-width: 638px;
+    background-color: var(--color-light);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    @include mobile {
+      padding: 20px;
+    }
+  }
+
+  &__body-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__body-main {
+    display: grid;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-weight: 500;
+      color: var(--color-dark);
+      font-size: 14px;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 21px 16px;
+      border: 1px solid var(--color-light-alt);
+      background-color: var(--colot-light-alt);
+      border-radius: 8px;
+      font-size: fluid-text(16, 12);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #d9d9d9;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid var(--color-accent);
+        background-color: var(--colot-light-alt);
+      }
+
+      @include tablet {
+        padding: 14px 12px;
+     
+      }
+      @include mobile {
+        padding: 13px;
+        font-size: 10px;
+      }
+    }
+
+    textarea {
+      min-height: 144px;
+      resize: vertical;
+      padding: 24px 16px;
+    }
+  }
+
+.info-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 594px  ;
+
+    &__field {
+        padding-bottom: 24px;
+        border-bottom: 2px solid rgba(203, 203, 203, 1);
+        opacity: 0.6;
+        @include fluid-text(16, 14);
+    }
+
+    &__hero {
+        display: inline-flex;
+        gap: 24px;
+
+        &-image {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-weight: 600;
+
+        // &-description {
+        // }
+
+        &-field {
+            color: var(--color-accent);
+        }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import 'mixins';
+
+body {
+    @include fluid-text(20, 16);
+
+    font-family: var(--font-famili-base);
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-gray-alt);
+}
+
+a, button, input, textarea, svg * {
+    text-decoration: var(--transition-duration);
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 {
+    @include fluid-text(64, 40);
+}
+
+h2 {
+    @include fluid-text(48, 28); // Поменять для мобильной версии 
+}
+
+h3 {
+    @include fluid-text(32, 24); // Поменять для мобильной версии 
+}
+
+h4 {
+    @include fluid-text(24, 12); // Поменять для мобильной версии 
+}
+
+h5 {
+    @include fluid-text(16, 16);
+}
+
+// p {
+//     @include fluid-text(20, 14);
+// }
+
+// span {
+//     @include fluid-text(16, 12);
+// }
