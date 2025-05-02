@@ -2,55 +2,187 @@
 <properties>
     <property>
         <id>1</id>
-        <title>Вилла у моря</title>
-        <price>8995000</price>
-        <address>ул. Приморская 25, Сочи</address>
-        <city>Сочи</city>
+        <title>Дом "Лазурный Берег"</title>
+        <price>7200000</price>
+        <address>ул.Пальмовая улица 23, Ницца, Франция</address>
+        <city>Ницца</city>
         <type>дом</type>
         <deal_type>продажа</deal_type>
-        <beds>5</beds>
-        <baths>3</baths>
+        <beds>3</beds>
+        <baths>2</baths>
         <square_footage>250</square_footage>
-        <image>/img/card.png</image>
+        <image>/img/house1.png</image>
     </property>
     <property>
         <id>2</id>
-        <title>Апартаменты в центре</title>
+        <title>Вилла "Царский Лес"</title>
         <price>150000</price>
-        <address>ул. Ленина 15, Москва</address>
-        <city>Москва</city>
+        <address>пр. Дзержинского 11, Минск, Беларусь</address>
+        <city>Минск</city>
         <type>квартира</type>
-        <deal_type>аренда</deal_type>
-        <beds>3</beds>
-        <baths>2</baths>
-        <square_footage>120</square_footage>
-        <image>/img/card.png</image>
+        <deal_type>продажа</deal_type>
+        <beds>6</beds>
+        <baths>5</baths>
+        <square_footage>620</square_footage>
+        <image>/img/house2.png</image>
     </property>
     <property>
         <id>3</id>
-        <title>Апартаменты в центре</title>
-        <price>150000</price>
-        <address>ул. Ленина 15, Москва</address>
+        <title>Квартира "Старый Город"</title>
+        <price>3500000</price>
+        <address>ул. Тверская 10, Москва, Россия</address>
         <city>Москва</city>
         <type>квартира</type>
         <deal_type>аренда</deal_type>
         <beds>3</beds>
         <baths>2</baths>
-        <square_footage>120</square_footage>
-        <image>/img/card.png</image>
+        <square_footage>210</square_footage>
+        <image>/img/house3.png</image>
     </property>
-
     <property>
         <id>4</id>
-        <title>Апартаменты в центре</title>
-        <price>150000</price>
-        <address>ул. Ленина 15, Москва</address>
+        <title>Вилла «Пальмира»</title>
+        <price>8995000</price>
+        <address>ул. Пальмовая, Сочи, Россия</address>
+        <city>Сочи</city>
+        <type>вилла</type>
+        <deal_type>продажа</deal_type>
+        <beds>5</beds>
+        <baths>4</baths>
+        <square_footage>525</square_footage>
+        <image>/img/house4.png</image>
+    </property>
+    <property>
+        <id>5</id>
+        <title>Вилла «Белый Лебедь»</title>
+        <price>8995000</price> 
+        <address>пр. Независимости 45, Минск, Беларусь</address>
+        <city>Минск</city>
+        <type>вилла</type>
+        <deal_type>продажа</deal_type>
+        <beds>6</beds>
+        <baths>5</baths>
+        <square_footage>580</square_footage>
+        <image>/img/house5.png</image>
+    </property>
+    <property>
+        <id>6</id>
+        <title>Квартира «Небесный Мост»</title>
+        <price>4200</price> 
+        <address>ул. Ташкентская 22, Москва, Россия</address>
         <city>Москва</city>
         <type>квартира</type>
         <deal_type>аренда</deal_type>
         <beds>3</beds>
         <baths>2</baths>
         <square_footage>120</square_footage>
-        <image>/img/card.png</image>
+        <image>/img/house6.png</image>
     </property>
+    <property>
+        <id>7</id>
+        <title>Вилла «Золотые Пески»</title>
+        <price>12000000</price> 
+        <address>бул. Приморский 10, Одесса, Украина</address>
+        <city>Одесса</city>
+        <type>вилла</type>
+        <deal_type>продажа</deal_type>
+        <beds>8</beds>
+        <baths>6</baths>
+        <square_footage>950</square_footage>
+        <image>/img/house7.png</image>
+    </property>
+    <property>
+        <id>8</id>
+        <title>Дом «Балтийский бриз»</title>
+        <price>5750000</price> 
+        <address>ул. Янтарная 15, Калининград, Россия</address>
+        <city>Калининград</city>
+        <type>вилла</type>
+        <deal_type>аренда</deal_type>
+        <beds>4</beds>
+        <baths>4</baths>
+        <square_footage>380</square_footage>
+        <image>/img/house8.png</image>
+    </property>
+
+
+    <property>
+        <id>9</id>
+        <title>Вилла «Белая Дача»</title>
+        <price>8995000</price> 
+        <address>Рублёво-Успенское шоссе 25, Мск. облась, Россия</address>
+        <city>Московская область</city>
+        <type>вилла</type>
+        <deal_type>продажа</deal_type>
+        <beds>7</beds>
+        <baths>5</baths>
+        <square_footage>525</square_footage>
+        <image>/img/house9.png</image>
+    </property>
+    <property>
+        <id>10</id>
+        <title>Дом «Луговое»</title>
+        <price>5750000</price> 
+        <address>ул. Центральная 15, Курская область, Россия</address>
+        <city>Калининград</city>
+        <type>дои</type>
+        <deal_type>продажа</deal_type>
+        <beds>6</beds>
+        <baths>5</baths>
+        <square_footage>665</square_footage>
+        <image>/img/house10.png</image>
+    </property>
+    <property>
+        <id>11</id>
+        <title>Квартира «Старый Город»</title>
+        <price>10200000</price> 
+        <address>пр. Невский 52, Санкт-Петербург, Россия</address>
+        <city>Калининград</city>
+        <type>квартира</type>
+        <deal_type>аренда</deal_type>
+        <beds>4</beds>
+        <baths>3</baths>
+        <square_footage></square_footage>
+        <image>/img/house11.png</image>
+    </property>
+    <property>
+        <id>12</id>
+        <title>Вилла «Золотой Оазис»</title>
+        <price>5750000</price> 
+        <address>ул. Пальмовая, 12, Джумейра, Дубай</address>
+        <city>Джумейра</city>
+        <type>вилла</type>
+        <deal_type>аренда</deal_type>
+        <beds>6</beds>
+        <baths>3</baths>
+        <square_footage>960</square_footage>
+        <image>/img/house12.png</image>
+    </property>
+    <property>
+        <id>13</id>
+        <title>Дом «Балтийский бриз»</title>
+        <price>3298725</price> 
+        <address>пр. Английская набережная 7, Ницца, Франция</address>
+        <city>Ницца</city>
+        <type>дом</type>
+        <deal_type>аренда</deal_type>
+        <beds>4</beds>
+        <baths>2</baths>
+        <square_footage>725</square_footage>
+        <image>/img/house13.png</image>
+    </property>
+    <property>
+        <id>14</id>
+        <title>Вилла «Королевский Парк»</title>
+        <price>90480000</price> 
+        <address>ул. Риджентс-парк 1, Лондон, Англия</address>
+        <city>Лондон</city>
+        <type>вилла</type>
+        <deal_type>продажа</deal_type>
+        <beds>30</beds>
+        <baths>25</baths>
+        <square_footage>3750</square_footage>
+        <image>/img/house14.png</image>
+    </property>
+    
 </properties>

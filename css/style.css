@@ -314,11 +314,6 @@ svg * {
   --transition-duration: 0.2s;
 }
 
-.catalog {
-  display: flex;
-  gap: 115px;
-}
-
 .contact-us {
   display: flex;
   justify-content: space-between;
@@ -1054,7 +1049,7 @@ svg * {
 }
 .card__info-main-location-price {
   font-size: 20px;
-  color: #4CAF50;
+  color: var(--color-accent);
 }
 .card__info-main-address {
   display: flex;
@@ -1083,7 +1078,7 @@ svg * {
   opacity: 0.6;
 }
 .card__label {
-  background-color: #4CAF50;
+  background-color: var(--color-accent);
   color: white;
   font-size: 14px;
   border-radius: 16px;
@@ -1097,8 +1092,15 @@ svg * {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
+.card--rent .card__label {
+  background-color: var(--color-accent);
+}
+.card--sale .card__label {
+  background-color: var(--color-accent-alt);
+}
 
 .menu {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1107,9 +1109,6 @@ svg * {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: all var(--transition-duration) ease;
-}
-.menu:hover {
-  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
 }
 .menu__group {
   display: flex;
@@ -1145,65 +1144,28 @@ svg * {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  transition: all var(--transition-duration) ease;
-}
-.menu__select:hover {
-  background-color: var(--color-gray-alt);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .menu__select:focus {
   outline: none;
   border-color: var(--color-accent);
   background-color: var(--color-light);
-  box-shadow: 0 0 0 3px rgba(39, 86, 58, 0.2);
-}
-.menu__select option {
-  padding: 12px;
-  background-color: var(--color-light);
-  color: var(--color-dark);
-  font-size: 14px;
-  transition: all var(--transition-duration) ease;
-}
-.menu__select option:checked {
-  background-color: var(--color-accent);
-  color: var(--color-light);
-}
-.menu__select option:hover {
-  background-color: var(--color-gray);
 }
 .menu__select-arrow {
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
   width: 10px;
   height: 10px;
   border-right: 2px solid var(--color-dark);
   border-bottom: 2px solid var(--color-dark);
   transform: translateY(-50%) rotate(45deg);
   transition: all var(--transition-duration) ease;
-  pointer-events: none;
 }
 .menu__select:focus + .menu__select-arrow {
   transform: translateY(-50%) rotate(-135deg);
   border-color: var(--color-accent);
 }
 
-/* Анимация появления меню */
-@keyframes menuAppear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.menu {
-  animation: menuAppear 0.5s ease forwards;
-}
 .menu__item {
   opacity: 0;
   animation: menuItemAppear 0.5s ease forwards;
@@ -1231,47 +1193,6 @@ svg * {
     transform: translateX(0);
   }
 }
-/* Стили для активного состояния select */
-.menu__select:focus + .menu__title {
-  transform: translateY(-2px);
-  color: var(--color-accent);
-}
-
-/* Добавим эффект пульсации при клике */
-.menu__select:active {
-  transform: scale(0.98);
-}
-
-/* Стили для placeholder опций */
-.menu__select option[value=""] {
-  color: var(--color-dark-alt);
-  font-style: italic;
-}
-
-/* Добавим индикатор загрузки */
-.menu__select.loading {
-  position: relative;
-  pointer-events: none;
-}
-.menu__select.loading::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
-  animation: loading 1s infinite linear;
-}
-
-@keyframes loading {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
 .purchase {
   display: block;
   max-width: 873px;
@@ -1280,4 +1201,9 @@ svg * {
   display: flex;
   flex-wrap: wrap;
   gap: 89px 137px;
+}
+
+.catalog {
+  display: flex;
+  gap: 115px;
 }/*# sourceMappingURL=style.css.map */

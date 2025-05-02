@@ -12,10 +12,11 @@ const swiper = new Swiper('.reviews__wrapper', {
       dynamicBullets: true,
     },
 
-    navigation: {
+    navigation: { // выводим стрелки 
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
     breakpoints: {
         0: {
             slidesPerView: 1,

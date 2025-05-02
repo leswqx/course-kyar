@@ -1,34 +1,56 @@
+// Создаем класс PropertyCatalog - это как чертеж для нашего каталога
 class PropertyCatalog {
+    // constructor - это специальный метод, который запускается при создании нового каталога
     constructor() {
+        // this.properties - массив для хранения всех объектов недвижимости
+        // [] - пустой массив, в который мы будем добавлять данные
         this.properties = [];
+        
+        // this.filters - объект для хранения фильтров
+        // {} - пустой объект, где мы храним текущие фильтры
         this.filters = {
-            city: '',
-            propertyType: '',
-            dealType: ''
+            city: '',         // Фильтр по городу
+            propertyType: '', // Фильтр по типу недвижимости
+            dealType: ''      // Фильтр по типу сделки
         };
+        
+        // this.currentSort - строка, хранящая текущий тип сортировки
         this.currentSort = 'price-asc';
+        
+        // this.isLoading - флаг (true/false) для отслеживания загрузки
         this.isLoading = false;
         
+        // Запускаем метод init() при создании каталога
         this.init();
     }
 
+    // Метод инициализации каталога
     async init() {
         try {
+            // Включаем индикатор загрузки
             this.setLoading(true);
+            // Загружаем данные о недвижимости
             await this.loadProperties();
+            // Настраиваем обработчики событий
             this.setupEventListeners();
+            // Заполняем select'ы опциями
             this.renderFilterOptions();
+            // Отображаем карточки недвижимости
             this.renderProperties();
         } catch (error) {
             console.error('Ошибка инициализации:', error);
         } finally {
+            // Выключаем индикатор загрузки
             this.setLoading(false);
         }
     }
 
+    // Метод для управления состоянием загрузки
     setLoading(loading) {
         this.isLoading = loading;
+        // Находим все select'ы
         const selects = document.querySelectorAll('.menu__select');
+        // Добавляем/убираем класс loading
         selects.forEach(select => {
             if (loading) {
                 select.classList.add('loading');
@@ -38,17 +60,24 @@ class PropertyCatalog {
         });
     }
 
+    // Метод загрузки данных из XML
     async loadProperties() {
         try {
+            // Запрашиваем XML файл
             const response = await fetch('/xml/properties.xml');
             if (!response.ok) {
                 throw new Error('Ошибка загрузки данных');
             }
+            // Получаем текст XML
             const xmlText = await response.text();
+            // Создаем парсер XML
             const parser = new DOMParser();
+            // Парсим XML в документ
             const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
             
+            // Получаем все элементы property
             const propertyElements = xmlDoc.getElementsByTagName('property');
+            // Преобразуем XML в массив объектов
             this.properties = Array.from(propertyElements).map(prop => ({
                 id: prop.getElementsByTagName('id')[0].textContent,
                 title: prop.getElementsByTagName('title')[0].textContent,
@@ -68,40 +97,41 @@ class PropertyCatalog {
         }
     }
 
+    // Метод настройки обработчиков событий
     setupEventListeners() {
+        // Обработчик изменения select'а
         const handleSelectChange = async (select, filterType) => {
+            // Показываем индикатор загрузки
             select.classList.add('loading');
             
             try {
+                // Обновляем фильтры или сортировку
                 if (filterType === 'sort') {
                     this.currentSort = select.value;
                 } else {
                     this.filters[filterType] = select.value;
                 }
                 
+                // Обновляем отображение
                 await this.renderProperties();
-            } catch (error) {
-                console.error('Ошибка при обновлении:', error);
             } finally {
+                // Убираем индикатор загрузки
                 setTimeout(() => {
                     select.classList.remove('loading');
                 }, 300);
             }
         };
 
-        // Обработчик сортировки
-        const sortSelect = document.getElementById('sortSelect');
-        sortSelect.addEventListener('change', (e) => handleSelectChange(e.target, 'sort'));
+        // Навешиваем обработчики на select'ы
+        document.getElementById('sortSelect').addEventListener('change', 
+            (e) => handleSelectChange(e.target, 'sort'));
 
-        // Обработчик фильтра по городу
         const citySelect = document.getElementById('citySelect');
         citySelect.addEventListener('change', (e) => handleSelectChange(e.target, 'city'));
 
-        // Обработчик фильтра по типу недвижимости
         const propertySelect = document.getElementById('propertySelect');
         propertySelect.addEventListener('change', (e) => handleSelectChange(e.target, 'propertyType'));
 
-        // Обработчик фильтра по типу сделки
         const dealSelect = document.getElementById('dealSelect');
         dealSelect.addEventListener('change', (e) => handleSelectChange(e.target, 'dealType'));
 
@@ -117,31 +147,35 @@ class PropertyCatalog {
         });
     }
 
+    // Метод заполнения select'ов опциями
     async renderFilterOptions() {
+        // Показываем индикатор загрузки
         const selects = document.querySelectorAll('.menu__select');
         selects.forEach(select => select.classList.add('loading'));
 
         try {
-            // Заполняем select городов
+            // Получаем уникальные города
             const cities = [...new Set(this.properties.map(prop => prop.city))];
             const citySelect = document.getElementById('citySelect');
-            citySelect.innerHTML = '<option value="">Выберите город</option>';
+            citySelect.innerHTML = '<option value="">По умолчанию</option>';
             
+            // Добавляем города в select
             cities.forEach((city, index) => {
                 const option = document.createElement('option');
                 option.value = city;
                 option.textContent = city;
-                // Добавляем задержку появления для анимации
+                // Добавляем задержку для анимации
                 setTimeout(() => {
                     citySelect.appendChild(option);
                 }, index * 50);
             });
 
-            // Заполняем select типов сделок
+            // Получаем уникальные типы сделок
             const dealTypes = [...new Set(this.properties.map(prop => prop.dealType))];
             const dealSelect = document.getElementById('dealSelect');
-            dealSelect.innerHTML = '<option value="">Выберите тип сделки</option>';
+            // dealSelect.innerHTML = '<option value="">Выберите тип сделки</option>';
             
+            // Добавляем типы сделок в select
             dealTypes.forEach((type, index) => {
                 const option = document.createElement('option');
                 option.value = type;
@@ -161,28 +195,39 @@ class PropertyCatalog {
         }
     }
 
+    // Метод сортировки карточек
     sortProperties(properties) {
         const sortedProperties = [...properties];
         
+        // Сортируем в зависимости от выбранного типа
         switch (this.currentSort) {
-            case 'price-asc':
+            case 'price-asc':  // По возрастанию цены
                 return sortedProperties.sort((a, b) => a.price - b.price);
-            case 'price-desc':
+            case 'price-desc': // По убыванию цены
                 return sortedProperties.sort((a, b) => b.price - a.price);
             default:
                 return sortedProperties.sort((a, b) => a.title.localeCompare(b.title));
         }
     }
 
+    // Метод фильтрации карточек
     filterProperties() {
+        // filter - метод массива, который создает новый массив с элементами,
+        // прошедшими проверку
         return this.properties.filter(property => {
+            // Проверяем совпадение с каждым фильтром
+            // || - логическое ИЛИ
+            // ! - логическое НЕ
             const cityMatch = !this.filters.city || property.city === this.filters.city;
             const typeMatch = !this.filters.propertyType || property.type === this.filters.propertyType;
             const dealTypeMatch = !this.filters.dealType || property.dealType === this.filters.dealType;
+            
+            // Возвращаем true, если все проверки пройдены
             return cityMatch && typeMatch && dealTypeMatch;
         });
     }
 
+    // Метод отображения карточек
     async renderProperties() {
         const propertyList = document.querySelector('.purchase__list');
         propertyList.style.opacity = '0';
@@ -192,7 +237,7 @@ class PropertyCatalog {
             filteredProperties = this.sortProperties(filteredProperties);
 
             const propertyHTML = filteredProperties.map(property => `
-                <div class="card">
+                <div class="card ${property.dealType === 'аренда' ? 'card--rent' : 'card--sale'}">
                     <img class="card__image" src="${property.image}" alt="${property.title}" loading="lazy">
                     <div class="card__info">
                         <div class="card__info-main">
@@ -222,11 +267,10 @@ class PropertyCatalog {
                             </div>
                         </div>
                     </div>
-                    <span class="card__label">${property.dealType === 'продажа' ? 'ПРОДАЖА' : 'АРЕНДА'}</span>
+                    <span class="card__label">${property.dealType === 'аренда' ? 'АРЕНДА' : 'ПРОДАЖА'}</span>
                 </div>
             `).join('');
 
-            // Анимированное обновление списка
             await new Promise(resolve => {
                 setTimeout(() => {
                     propertyList.innerHTML = propertyHTML;
@@ -242,7 +286,7 @@ class PropertyCatalog {
     }
 }
 
-// Инициализация каталога при загрузке DOM
+// Инициализация каталога при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     new PropertyCatalog();
 });

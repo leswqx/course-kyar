@@ -31,7 +31,7 @@
 
                 &-price {
                     font-size: 20px;
-                    color: $color-primary;
+                    color: var(--color-accent);
                 }
             }
 
@@ -70,7 +70,7 @@
     }
 
     &__label {
-        background-color: $color-primary;
+        background-color: var(--color-accent);
         color: white;
         font-size: 14px;
         border-radius: 16px;
@@ -84,5 +84,17 @@
     &:hover {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         transform: translateY(-2px);
+    }
+
+    &--rent {
+        .card__label {
+            background-color: var(--color-accent);
+        }
+    }
+
+    &--sale {
+        .card__label {
+            background-color: var(--color-accent-alt);
+        }
     }
 } 
