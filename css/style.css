@@ -20,6 +20,10 @@
   font-style: normal;
   font-display: swap;
 }
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-size: clamp(16px, 1.3888888889vw, 20px);
   font-family: var(--font-famili-base);
@@ -31,9 +35,17 @@ body {
   background-color: var(--color-gray-alt);
 }
 
-a, button, input, textarea, svg * {
-  -webkit-text-decoration: var(--transition-duration);
-          text-decoration: var(--transition-duration);
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin-block: 0;
+}
+
+p {
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -62,205 +74,18 @@ h5 {
 }
 
 /**
-  Нормализация блочной модели
+  Курсор-рука при наведении на элемент
  */
-*,
-::before,
-::after {
-  box-sizing: border-box;
+button {
+  cursor: pointer;
 }
 
-/**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
- */
-:where(ul, ol):where([class]) {
-  padding-left: 0;
-}
-
-/**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
- */
-body,
-:where(blockquote, figure):where([class]) {
-  margin: 0;
-}
-
-/**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
- */
-:where(h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl):where([class]) {
-  margin-block: 0;
-}
-
-:where(dd[class]) {
-  margin-left: 0;
-}
-
-:where(fieldset[class]) {
-  margin-left: 0;
-  padding: 0;
-  border: none;
-}
-
-/**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
-:where(ul[class]) {
-  list-style: none;
-}
-
-:where(address[class]) {
-  font-style: normal;
-}
-
-/**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
- */
-p {
-  --paragraphMarginBottom: 24px;
-  margin-block: 0;
-}
-
-/**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
- */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
-}
-
-/**
-  Упрощаем работу с изображениями и видео
- */
-img,
-video {
+img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/**
-  Наследуем свойства шрифт для полей ввода
- */
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-html {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
-  height: 100%;
-  /**
-    Убираем скачок интерфейса по горизонтали
-    при появлении / исчезновении скроллбара
-   */
-  scrollbar-gutter: stable;
-}
-
-/**
-  Плавный скролл
- */
-html,
-:has(:target) {
-  scroll-behavior: smooth;
-}
-
-body {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
-  min-height: 100%;
-  /**
-    Унифицированный интерлиньяж
-   */
-  line-height: 1.5;
-}
-
-/**
-  Нормализация высоты элемента ссылки при его инспектировании в DevTools
- */
-a:where([class]) {
-  display: inline-flex;
-}
-
-/**
-  Курсор-рука при наведении на элемент
- */
-button,
-label {
-  cursor: pointer;
-}
-
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
- */
-:where([fill]:not([fill=none],
-[fill^=url])) {
-  fill: currentColor;
-}
-
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут stroke со значением 'none')
- */
-:where([stroke]:not([stroke=none],
-[stroke^=url])) {
-  stroke: currentColor;
-}
-
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
-}
-
-/**
-  Приведение рамок таблиц в классический 'collapse' вид
- */
-:where(table) {
-  border-collapse: collapse;
-  border-color: currentColor;
-}
-
-/**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 .container {
   max-width: calc(var(--conteiner-width) + var(--conteiner-padding-x) * 2);
   margin-inline: auto;
@@ -704,10 +529,10 @@ svg * {
   margin-top: -88px;
 }
 .welcome__body {
-  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 .welcome__title {
@@ -744,6 +569,12 @@ svg * {
 }
 .hero__title {
   margin-bottom: 25px;
+  font-size: clamp(16px, 2.2222222222vw, 32px);
+}
+@media (max-width: 1023px) {
+  .hero__title {
+    margin-bottom: 15px;
+  }
 }
 .hero__description {
   font-size: clamp(14px, 1.3888888889vw, 20px);
@@ -1025,11 +856,6 @@ svg * {
   width: 100%;
   background-color: white;
 }
-@media (max-width: 1280px) {
-  .card {
-    width: 340px;
-  }
-}
 .card__info {
   padding: 16px;
 }
@@ -1102,7 +928,8 @@ svg * {
 .menu {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 24px;
   padding: 24px;
   background: var(--color-light);
@@ -1112,8 +939,17 @@ svg * {
 }
 .menu__group {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .menu__group {
+    gap: 24px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .menu__item {
   display: flex;
@@ -1132,7 +968,7 @@ svg * {
   align-items: center;
 }
 .menu__select {
-  width: 100%;
+  width: 162px;
   padding: 12px 16px;
   padding-right: 40px;
   border: var(--border);
@@ -1144,6 +980,12 @@ svg * {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  font-size: clamp(12px, 0.9722222222vw, 14px);
+}
+@media (max-width: 767px) {
+  .menu__select {
+    width: 120px;
+  }
 }
 .menu__select:focus {
   outline: none;
@@ -1195,15 +1037,18 @@ svg * {
 }
 .purchase {
   display: block;
-  max-width: 873px;
+  width: 100%;
 }
 .purchase__list {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 89px 137px;
+  gap: 60px 50px;
 }
 
 .catalog {
   display: flex;
-  gap: 115px;
+  flex-direction: column;
+  gap: 70px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,7 @@
 @import 'mixins';
+* {
+    box-sizing: border-box;
+}
 
 body {
     @include fluid-text(20, 16);
@@ -12,8 +15,17 @@ body {
     background-color: var(--color-gray-alt);
 }
 
-a, button, input, textarea, svg * {
-    text-decoration: var(--transition-duration);
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin-block: 0;
+}
+
+p {
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -41,10 +53,15 @@ h5 {
     @include fluid-text(16, 16);
 }
 
-// p {
-//     @include fluid-text(20, 14);
-// }
+/**
+  Курсор-рука при наведении на элемент
+ */
+ button{
+    cursor: pointer;
+}
 
-// span {
-//     @include fluid-text(16, 12);
-// }
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }

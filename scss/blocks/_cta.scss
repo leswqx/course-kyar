@@ -12,9 +12,10 @@
     }
     
     &__body {
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        @include flex-center;
         height: 474px;
         
         &-bg {

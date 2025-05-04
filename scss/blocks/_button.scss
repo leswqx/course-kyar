@@ -1,5 +1,7 @@
 .button {
-    @include flex-center(true);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
     height: var(--button-height);
     padding-inline: 28px;
@@ -23,7 +25,10 @@
 }
 
 .button-light {
-    @include flex-center(true);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
     height: var(--button-height);
     padding-inline: 21px;

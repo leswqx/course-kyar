@@ -27,6 +27,11 @@
 
     &__title {
         margin-bottom: 25px;
+        @include fluid-text(32, 16);
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
     }
 
     &__description {
