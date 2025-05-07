@@ -4,8 +4,6 @@
     align-items: start;
     gap: 20px;
 
-
-
     @include mobile {
         flex-direction: column;
         gap: 40px;
@@ -36,25 +34,26 @@
 
     &__description {
         @include fluid-text(20, 14);
-
         margin-bottom: 18px;
         text-align: justify;
 
     }
 
     &__image {
+
         @include desktop {
             max-width: 50%;
         }
+
         @include tablet {
             max-width: 50%;
             height: auto;
         }
+
         @include mobile {
             max-width: 100%;     
             width: 100%;    
             order: 1; 
         }
-
     }
 }

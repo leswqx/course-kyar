@@ -330,12 +330,12 @@ img {
 }
 
 .burger-button {
+  position: relative;
+  width: 48px;
+  aspect-ratio: 1;
   padding: 0;
   background-color: transparent;
   border: none;
-  width: 48px;
-  aspect-ratio: 1;
-  position: relative;
 }
 .burger-button::after {
   position: absolute;
@@ -351,12 +351,12 @@ img {
 }
 
 .burger-button-color {
+  position: relative;
+  width: 48px;
   padding: 0;
   background-color: transparent;
   border: none;
-  width: 48px;
   aspect-ratio: 1;
-  position: relative;
 }
 .burger-button-color::after {
   position: absolute;
@@ -821,6 +821,7 @@ img {
 .reviews__hero {
   width: 364px;
   width: 100%;
+  height: 320px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -828,9 +829,23 @@ img {
   border-radius: 12px;
   background-color: var(--color-light);
 }
+.reviews__hero-description {
+  text-align: justify;
+  line-height: 150%;
+}
 .reviews__avatar {
   display: flex;
   gap: 16px;
+}
+.reviews__avatar-image {
+  border-radius: 50%;
+}
+.reviews__avatar-name h5 {
+  font-size: clamp(14px, 1.1111111111vw, 16px);
+}
+.reviews__avatar-name span {
+  font-size: clamp(12px, 1.1111111111vw, 16px);
+  color: var(--color-dark-alt);
 }
 
 .swiper-pagination-bullet {
@@ -855,6 +870,9 @@ img {
   max-width: 368px;
   width: 100%;
   background-color: white;
+}
+.card__image {
+  border-radius: 12px 12px 0 0;
 }
 .card__info {
   padding: 16px;

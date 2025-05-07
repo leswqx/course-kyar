@@ -7,6 +7,10 @@
     width: 100%;
     background-color: white;
 
+    &__image {
+        border-radius: 12px 12px 0 0;
+    }
+    
     &__info {
         padding: 16px;
 

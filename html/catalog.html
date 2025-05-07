@@ -10,9 +10,8 @@
     <header class="header"> 
         <div class="header__inner container">
             <a href="/html/main.html" class="header__logo logo">
-                <img src="/img/logo-green.svg" alt="Твой квадратный метр" width="249px" height="40px" loading="lazy">
+                <img src="/img/logo-green.svg" alt="Твой квадратный метр" width="249" height="40" loading="lazy">
             </a>
-            
             <nav class="header__menu hidden__mobile">
                 <ul class="header__menu-list">
                     <li class="header__menu-item"><a class="header__menu-link-color" href="/html/main.html">Главная</a></li>
@@ -21,20 +20,17 @@
                     <li class="header__menu-item"><a class="header__menu-link-color" href="/html/contact.html">Контакты</a></li>
                 </ul>            
             </nav>
-
             <button class="button__burder-menu burger-button-color visible-mobile" type="button" onclick="mobileOverlay.showModal()">
                 <span class="visually-hiden"></span>
             </button>
         </div>
     </header>
-
     <main class="content">
         <section class="section container"> 
             <div class="section__body"> 
                 <h2 class="section__title">Найдите дома и квартиры в вашем любимом месте</h2>
             </div>
         </section>
-
         <section class="section container">
             <div class="section__body">
                 <div class="catalog">
@@ -61,7 +57,6 @@
                                     <span class="menu__select-arrow"></span>
                                 </div>
                             </div>
-
                             <div class="menu__item">
                                 <h4 class="menu__title">Тип недвижимости</h4>
                                 <div class="menu__select-wrapper">
@@ -74,12 +69,10 @@
                                     <span class="menu__select-arrow"></span>
                                 </div>
                             </div>
-
                             <div class="menu__item">
                                 <h4 class="menu__title">Тип сделки</h4>
                                 <div class="menu__select-wrapper">
                                     <select class="menu__select" id="dealSelect">
-                                        <!-- <option value="">Выберите тип сделки</option> -->
                                         <!-- Типы сделок будут добавлены через JavaScript -->
                                     </select>
                                     <span class="menu__select-arrow"></span>
@@ -87,7 +80,6 @@
                             </div>
                         </div>
                     </div>
-                
                     <div class="purchase">
                         <div class="purchase__list">
                             <!-- Карточки недвижимости будут добавлены через JavaScript -->
@@ -97,11 +89,10 @@
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="footer__body container">
             <div class="footer__contacts">
-                <img src="/img/logo.svg" alt="EcoHaven Realty" width="200" height="30">
+                <img src="/img/logo.svg" alt="Твой Квадратный метр" width="200" height="30">
                 <div class="footer__contacts-list">
                     <a href="https://www.facebook.com/" class="footer__contacts-icon">
                         <img src="/img/facebook.svg" alt="facebook">
@@ -123,7 +114,6 @@
                     </svg>
                 </a>
             </div>
-
             <nav class="footer__menu">
                 <ul class="footer__menu-list">
                     <li class="footer__menu-item"><a class="footer__menu-link" href="/html/main.html">Главная</a></li>
@@ -134,7 +124,6 @@
             </nav>
         </div>
     </footer>
-
     <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
         <form class="mobile-overlay__close-button-wrapper" method="dialog">
             <button class="mobile-overlay__close-button cross-button" type="submit">
@@ -150,7 +139,6 @@
             </ul>
         </div>
     </dialog>
-
     <script src="/js/catalog.js"></script>
 </body>
 </html>

@@ -45,7 +45,7 @@
             }
         }
 
-        &-link-color { // Модификатор на другой цвет
+        &-link-color {
 
             position: relative;
             display: inline-flex;
@@ -70,8 +70,6 @@
                 background-color: currentColor; // Такой же как ссылка
                 transition-duration: 0.2s;
             }
-
         }
     }
-
 }

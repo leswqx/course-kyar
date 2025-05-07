@@ -4,15 +4,13 @@ const swiper = new Swiper('.reviews__wrapper', {
     loop: true,
     centeredSlidesBounds: true,
 
-    
-
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       dynamicBullets: true,
     },
 
-    navigation: { // выводим стрелки 
+    navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
@@ -29,4 +27,3 @@ const swiper = new Swiper('.reviews__wrapper', {
         },
     },
   });
-  

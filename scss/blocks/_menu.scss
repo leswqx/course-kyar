@@ -102,11 +102,11 @@
 
 @keyframes menuItemAppear {
     from {
-        opacity: 0;
-        transform: translateX(-20px);
+        opacity: 0;                 // Начало: прозрачность 0 
+        transform: translateX(-20px); // Сдвиг влево на 20px
     }
     to {
-        opacity: 1;
-        transform: translateX(0);
+        opacity: 1;                 // Конец: полностью видим
+        transform: translateX(0);   // Возврат в исходное положение
     }
 }
